@@ -1,7 +1,7 @@
 import { useState } from "react";
-import ToDoItem from "./components/ToDoItem";
 import { dummyData } from "./data/todos";
 import AddToDoForm from "./components/AddToDoForm";
+import ToDoList from "./components/ToDoList";
 
 function App() {
 
@@ -24,19 +24,20 @@ function App() {
     ]);
   };
 
+  function deleteToDo(id: number) {
+    setToDos(prevToDos => prevToDos.filter(todo => todo.id !== id))
+  }
+
   return (
-    <main className="py-10 h-screen space-y-5">
+    <main className="py-10 h-screen space-y-5 overflow-y-auto">
       <h1 className="font-bold text-3xl text-center">Your ToDos</h1>
       <div className="max-w-lg mx-auto bg-slate-100 rounded-md p-5 space-y-6">
         <AddToDoForm
         onSubmit={addToDo}/>
-        <div className="space-y-2">
-          {todos.map((todo) => (
-            <ToDoItem todo={todo}
-            key={todo.id}
-            onCompletedChange={setToDoCompleted}/>
-          ))}
-        </div>
+        <ToDoList
+        toDos={todos}
+        onCompleteChange={setToDoCompleted}
+        onDelete={deleteToDo}/>
       </div>
     </main>
   );
