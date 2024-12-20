@@ -1,36 +1,22 @@
-import AddToDoForm from "./components/AddToDoForm";
-import ToDoList from "./components/ToDoList";
-import ToDoSummary from "./components/ToDoSummary";
-import useToDos from "./hooks/useToDos";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
+import HomePage from "./pages/HomePage";
+import HowManyMichusPage from "./pages/HowManyMichus";
+import ToDoListPage from "./pages/ToDoListPage";
 
 function App() {
 
-  const {
-    todos,
-    addToDo,
-    deleteToDo,
-    setToDoCompleted,
-    deleteAllCompletedToDos
-  } = useToDos();
-
   return (
-    <main className="h-screen space-y-5 overflow-y-auto">
-      <Header/>
-      <h1 className="font-bold text-3xl text-center">Your ToDos</h1>
-      <div className="max-w-lg mx-auto bg-slate-100 rounded-md p-5 space-y-6">
-        <AddToDoForm
-        onSubmit={addToDo}/>
-        <ToDoList
-        toDos={todos}
-        onCompleteChange={setToDoCompleted}
-        onDelete={deleteToDo}/>
-      </div>
-      <ToDoSummary
-        todos={todos}
-        deleteAllCompleted={deleteAllCompletedToDos}
-      />
-    </main>
+    <Router basename="/json-puncheon">
+      <main className="h-screen space-y-5 overflow-y-auto">
+        <Header/>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/how-many-michus" element={<HowManyMichusPage />} />
+          <Route path="/to-do-list" element={<ToDoListPage />} />
+        </Routes>
+      </main>
+    </Router>
   );
 }
 
