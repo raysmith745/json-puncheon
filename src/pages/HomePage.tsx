@@ -4,7 +4,7 @@ const HomePage = () => {
   return (
     <div>
       <div className="flex justify-center items-center">
-        <img src="/json-puncheon/logo.png" alt="JSON Puncheon Logo" className="logo w-48 h-48" />
+        <img src="/json-puncheon/jsonPuncheonLogo.png" alt="JSON Puncheon Logo" className="logo w-48 h-48" />
       </div>
       <h1 className="font-bold text-3xl text-center p-5">JSON Puncheon</h1>
       <p className="text-center px-4 mb-4">This is the JSON Puncheon blog. Using my interest in football to better learn programming.</p>
