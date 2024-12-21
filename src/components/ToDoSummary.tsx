@@ -14,7 +14,7 @@ export default function ToDoSummary({
   return (
     <div className="text-center space-y-2">
       <p className="text-sm font-medium">
-        {completedTodos.length}/{todos.length} todos completed.
+        {completedTodos.length}/{todos.length} ToDos completed.
       </p>
       {completedTodos.length > 0 && (
         <button
