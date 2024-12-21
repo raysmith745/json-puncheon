@@ -24,7 +24,7 @@ export default function Footer() {
           <FaLinkedin className="text-black text-3xl hover:text-white" />
         </a>
       </div>
-      <div className="text-right flex">
+      <div className="text-right flex text-xs sm:text-base">
         <p className="text-black">© Ray Smith {currentYear}</p>
       </div>
     </footer>

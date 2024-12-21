@@ -7,7 +7,7 @@ export default function Header() {
         <img src="./jsonPuncheonLogo.png" alt="JSON Puncheon Logo" className="logo w-16 h-16" />
       </Link>
       <nav>
-        <ul className="flex flex-row space-x-4 ml-4">
+        <ul className="flex flex-row space-x-4 ml-4 text-xs sm:text-base">
           <li className="flex items-center">
             <Link to="/" className="hover:text-gray-500">Home</Link>
           </li>
